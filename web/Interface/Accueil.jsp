@@ -15,7 +15,7 @@
 </head>
 <body>
 
-div classe="container" >
+<div classe="container" >
 <nav class="navbar navbar-expand-sm navbar-inverse bg-primary bg-info mb-3">
     <a href="#" class="navbar-brand">Ifosup-Wavre</a>
 
@@ -30,6 +30,10 @@ div classe="container" >
             <a href="/supprime" class="nav-link">Supprimer un club</a>
 
         </li>
+        <li class="navbar-nav">
+            <a href="/modifier" class="nav-link">Modifier un club</a>
+
+        </li>
 
     </ul>
 
@@ -37,6 +41,23 @@ div classe="container" >
 
 
 </div>
+
+
+
+<div class="container">
+<div class="row justify-content-center">
+    <div class="col-4">
+        <h1>Gestion de club</h1>
+
+    </div>
+</div>
+</div>
+
+
+
+
+
+
 
 
 
