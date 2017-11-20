@@ -14,6 +14,7 @@ public class ServletCreationClub extends javax.servlet.http.HttpServlet {
         String typeClub = request.getParameter("typeClub");
 
         creaClub.creationClub(nomClub,typeClub);
+        request.getRequestDispatcher("/Interface/Accueil.jsp").forward(request,response);
 
 
     }
