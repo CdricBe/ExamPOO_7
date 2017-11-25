@@ -15,6 +15,7 @@ public class ServletNewMembre extends javax.servlet.http.HttpServlet {
         String DateNaiss = request.getParameter(  "DateNaiss");
 
         newMemb.createMembre(nomMembre,prenomMembre, DateNaiss);
+        request.getRequestDispatcher("/Interface/Acceuil2.jsp");
     }
 
     protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
