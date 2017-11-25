@@ -49,6 +49,17 @@
     <div class="col-4">
         <h1>Gestion de club</h1>
 
+        <ul>
+            <c:forEach items="${clubs}" var="todo">
+                <tr>
+                    <td>${todo.nom}</td>
+                    <td>${todo.type}</td>
+
+                </tr>
+            </c:forEach>
+
+        </ul>
+
     </div>
 </div>
 </div>
