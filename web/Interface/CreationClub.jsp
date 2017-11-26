@@ -15,7 +15,7 @@
     <div class="row justify-content-center">
         <div class="col-4">
             <h3 class="p-3 bg-primary text-black text-center">Création d'un club</h3>
-            <form action="/club" method="post">
+            <form action="/creaclub" method="post">
                 <div class="form-group">
                     <input class="form-control" type="text" name="nomClub"
                            placeholder="nom du club">

@@ -19,7 +19,7 @@ public class ServletSupprimeClub extends HttpServlet {
 
 
         suppriClub.supprimeClub(nomClub);
-        request.getRequestDispatcher("/Interface/Accueil.jsp").forward(request,response);
+        response.sendRedirect("/Interface/AffichageClub.jsp");
 
 
     }

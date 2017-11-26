@@ -5,7 +5,6 @@
   Time: 09:39
   To change this template use File | Settings | File Templates.
 --%>
-
 <%@include file="../Template/header.jspf"%>
 
 <%@include file="../Template/navigation.jspf"%>

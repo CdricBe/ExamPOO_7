@@ -1,25 +1,32 @@
 package Club;
 
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@javax.servlet.annotation.WebServlet(name = "ServletCreationClub",urlPatterns = {"/club"})
-public class ServletCreationClub extends javax.servlet.http.HttpServlet {
+@WebServlet(name = "ServletCreationClub",urlPatterns = {"/creaclub"})
+public class ServletCreationClub extends HttpServlet {
 
-    private ClubService creaClub = new ClubService();
+    private ClubService creaclub =new ClubService();
 
 
-    protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        request.setCharacterEncoding("UTF-8");
 
         String nomClub = request.getParameter("nomClub");
         String typeClub = request.getParameter("typeClub");
 
-        creaClub.creationClub(nomClub,typeClub);
-        request.getRequestDispatcher("/Interface/Accueil.jsp").forward(request,response);
+        creaclub.creationClub(nomClub,typeClub);
+        response.sendRedirect("Interface/AffichageClub.jsp");
 
 
     }
 
-    protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         request.getRequestDispatcher("Interface/CreationClub.jsp").forward(request,response);
 

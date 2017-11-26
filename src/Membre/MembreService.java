@@ -21,7 +21,7 @@ public class MembreService {
 
             Statement state = conn.createStatement();
 
-            state.executeUpdate("INSERT INTO membres(M_Nom, M_Prenom, M_DateNaiss) VALUES('" + nom + "','" + prenom + "','" + dateNaissance +"')");
+            state.executeQuery("INSERT INTO membres(M_Nom, M_Prenom, M_DateNaiss) VALUES('" + nom + "','" + prenom + "','" + dateNaissance +"')");
 
 
         } catch (Exception e) {
