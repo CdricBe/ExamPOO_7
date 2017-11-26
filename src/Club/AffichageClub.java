@@ -10,11 +10,6 @@ import java.util.List;
 
 public class AffichageClub {
 
-
-
-
-
-
     public List<Club> recupereClub() {
 
         List<Club> clubs = new ArrayList<Club>();
@@ -33,13 +28,17 @@ public class AffichageClub {
 
             ResultSet resultat = state.executeQuery("SELECT C_Nom, C_Type FROM clubs");
 
+
+
             while (resultat.next()) {
+
 
                 String nom = resultat.getString("C_Nom");
                 String type = resultat.getString("C_Type");
 
+                Club cluby = new Club(nom,type);
 
-                clubs.add(new Club(nom, type));
+                clubs.add(cluby);
 
 
             }
@@ -52,7 +51,6 @@ public class AffichageClub {
 
         return clubs;
     }
-
 
 
     }

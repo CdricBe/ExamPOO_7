@@ -35,6 +35,12 @@ public class Club {
         this.type = type;
     }
 
-
+    @Override
+    public String toString() {
+        return "Club{" +
+                "nom='" + nom + '\'' +
+                ", type='" + type + '\'' +
+                '}';
+    }
 }
 
