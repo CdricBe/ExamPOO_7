@@ -21,7 +21,7 @@ public class ServletCreationClub extends HttpServlet {
         String typeClub = request.getParameter("typeClub");
 
         creaclub.creationClub(nomClub,typeClub);
-        response.sendRedirect("Interface/AffichageClub.jsp");
+        response.sendRedirect("/afficheClub");
 
 
     }

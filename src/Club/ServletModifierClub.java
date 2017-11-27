@@ -20,7 +20,7 @@ public class ServletModifierClub extends HttpServlet {
 
 
         modifie.modifierClub(nom,Newnom,Newtype);
-        response.sendRedirect("Interface/AffichageClub.jsp");
+        response.sendRedirect("/afficheClub");
 
     }
 
