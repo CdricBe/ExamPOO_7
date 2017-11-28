@@ -15,18 +15,18 @@ public class ServletSupprimeClub extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String nomClub = request.getParameter("ClubSupprime");
-
-
-        suppriClub.supprimeClub(nomClub);
-        response.sendRedirect("/afficheClub");
-
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        request.getRequestDispatcher("Interface/SupprimeClub.jsp").forward(request,response);
+        String nom = request.getParameter("club");
+        String type= request.getParameter("type");
+
+        suppriClub.supprimeClub(nom,type);
+        response.sendRedirect("/afficheClub");
+
+
 
     }
 }

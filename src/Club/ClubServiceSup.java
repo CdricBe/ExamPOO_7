@@ -6,7 +6,7 @@ import java.sql.Statement;
 
 public class ClubServiceSup {
 
-    public void supprimeClub(String nom) {
+    public void supprimeClub(String nom, String type) {
 
         try {
             //chargement du driver
@@ -20,7 +20,7 @@ public class ClubServiceSup {
 
             Statement state = conn.createStatement();
 
-            state.executeUpdate("DELETE FROM clubs WHERE C_Nom = '"+nom+"'");
+            state.executeUpdate("DELETE FROM clubs WHERE C_Nom='"+nom+"' AND C_Type='"+type+"'");
 
 
         } catch (Exception e) {

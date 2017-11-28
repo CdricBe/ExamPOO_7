@@ -30,7 +30,7 @@
                         <td class="col-2">${club.nom}</td>
                         <td class="col-2">${club.type}</td>
                         <td>
-                            <a class="col-2" href="/supprime">
+                            <a class="col-2" href="/supprime?club=${club.nom}&type=${club.type}">
                                 <i class="fa fa-trash-o"aria-hidden="true"></i>
                             </a>
                         </td>

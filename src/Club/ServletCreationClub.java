@@ -20,8 +20,22 @@ public class ServletCreationClub extends HttpServlet {
         String nomClub = request.getParameter("nomClub");
         String typeClub = request.getParameter("typeClub");
 
-        creaclub.creationClub(nomClub,typeClub);
-        response.sendRedirect("/afficheClub");
+        boolean Conforme = creaclub.creationClub(nomClub,typeClub);
+
+        if(Conforme){
+
+            response.sendRedirect("/afficheClub");
+        }
+        else{
+
+            request.setAttribute("errorMessage","Choisir un autre nom");
+            request.getRequestDispatcher("/Interface/CreationClub.jsp").forward(request,response);
+
+        }
+
+
+
+
 
 
     }

@@ -2,11 +2,12 @@ package Club;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class ClubService {
 
-    public void creationClub(String nom, String type) {
+    public boolean creationClub(String nom, String type) {
 
         try {
             //chargement du driver
@@ -20,7 +21,28 @@ public class ClubService {
 
             Statement state = conn.createStatement();
 
-            state.executeUpdate("INSERT INTO clubs(C_Nom,C_Type) VALUES('"+nom+"','"+type+"')");
+            Statement state2 = conn.createStatement();
+
+
+
+            ResultSet resultat = state2.executeQuery("SELECT C_Nom FROM clubs WHERE C_Nom='"+nom+"'");
+
+            while(resultat.next()){
+
+                String NomRecup = resultat.getString("C_Nom");
+
+                if(!NomRecup.equals(nom)){
+
+                    state.executeUpdate("INSERT INTO clubs(C_Nom,C_Type) VALUES('"+nom+"','"+type+"')");
+
+                    return true;
+
+                }
+                else{
+                    return false;
+                }
+
+            }
 
 
 
@@ -28,7 +50,7 @@ public class ClubService {
             e.printStackTrace();
 
         }
-
+        return false;
 
     }
 
