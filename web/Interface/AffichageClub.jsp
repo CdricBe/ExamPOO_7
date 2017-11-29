@@ -21,7 +21,6 @@
                     <th>Nom du club</th>
                     <th>Type</th>
                     <th>Supprimer</th>
-                    <th>Modifier</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -34,15 +33,13 @@
                                 <i class="fa fa-trash-o"aria-hidden="true"></i>
                             </a>
                         </td>
-                        <td>
-                            <a class="col-2" href="/modifier">
-                                <i class="fa fa-pencil"aria-hidden="true"></i>
-                            </a>
-                        </td>
                     </tr>
                 </c:forEach>
                 </tbody>
             </table>
+            <a class="btn btn-success btn-block" href="/modifier">
+                <i class="fa fa-pencil "aria-hidden="true">  Modifier club</i>
+            </a>
         </div>
     </main>
 </div>

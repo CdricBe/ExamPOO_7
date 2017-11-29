@@ -17,8 +17,9 @@ public class ServletNewMembre extends HttpServlet {
         String nomMembre = request.getParameter("nomMembre");
         String prenomMembre = request.getParameter("prenomMembre");
         String DateNaiss = request.getParameter(  "DateNaiss");
+        String club = request.getParameter("club");
 
-        creaMembre.createMembre(nomMembre,prenomMembre, DateNaiss);
+        creaMembre.createMembre(nomMembre,prenomMembre, DateNaiss,club);
         response.sendRedirect("/Interface/Accueil.jsp");
 
     }

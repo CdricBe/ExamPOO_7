@@ -31,14 +31,15 @@ public class ClubService {
 
                 String NomRecup = resultat.getString("C_Nom");
 
+
                 if(!NomRecup.equals(nom)){
 
                     state.executeUpdate("INSERT INTO clubs(C_Nom,C_Type) VALUES('"+nom+"','"+type+"')");
-
                     return true;
 
                 }
                 else{
+
                     return false;
                 }
 

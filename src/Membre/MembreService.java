@@ -7,7 +7,7 @@ import java.sql.Statement;
 
 public class MembreService {
 
-    public void createMembre(String nom, String prenom, String dateNaissance) {
+    public void createMembre(String nom, String prenom, String dateNaissance, String club) {
 
         try {
             //Chargement du driver
@@ -21,7 +21,7 @@ public class MembreService {
 
             Statement state = conn.createStatement();
 
-            state.executeQuery("INSERT INTO membres(M_Nom, M_Prenom, M_DateNaiss) VALUES('" + nom + "','" + prenom + "','" + dateNaissance +"')");
+            state.executeUpdate("INSERT INTO membres(M_Nom, M_Prenom, M_DateNaiss,FK_Club) VALUES('" + nom + "','" + prenom + "','" + dateNaissance +"','"+club+"')");
 
 
         } catch (Exception e) {
