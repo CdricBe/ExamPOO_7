@@ -26,17 +26,21 @@ public class AffichageClub {
 
             Statement state = conn.createStatement();
 
-            ResultSet resultat = state.executeQuery("SELECT C_Nom, C_Type FROM clubs");
+            ResultSet resultat = state.executeQuery("SELECT * FROM clubs");
 
 
 
             while (resultat.next()) {
 
 
+
+                int id = resultat.getInt("PK_Club");
                 String nom = resultat.getString("C_Nom");
                 String type = resultat.getString("C_Type");
 
-                Club cluby = new Club(nom,type);
+
+
+                Club cluby = new Club(id,nom,type);
 
                 clubs.add(cluby);
 

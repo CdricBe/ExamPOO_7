@@ -18,6 +18,7 @@
             <table class="table table-striped">
                 <thead>
                 <tr>
+                    <th>ID</th>
                     <th>Nom du club</th>
                     <th>Type</th>
                     <th>Supprimer</th>
@@ -26,6 +27,7 @@
                 <tbody>
                 <c:forEach items="${clubs}" var="club">
                     <tr>
+                        <td class="col-1">${club.id}</td>
                         <td class="col-2">${club.nom}</td>
                         <td class="col-2">${club.type}</td>
                         <td>

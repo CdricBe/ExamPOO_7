@@ -29,17 +29,20 @@
 
                 <div class="form-group">
 
+                    <input class="form-control" type="text" name="club" placeholder="Numero du club">
+
                 <select name="NomClub" id="NClub">
 
                     <c:forEach items="${clubs}" var="club">
 
-                        <option value='<c:out value="${club.nom}"/>'><c:out value="${club.nom}"/></option>
+                        <option value='<c:out value="${club.id}${club.nom}"/>'><c:out value="${club.id}    ${club.nom}"/></option>
 
                     </c:forEach>
 
                 </select>
 
                 </div>
+
 
 
                 <input class="btn btn-default btn-block bg-primary text-black" type="submit" value="valider">

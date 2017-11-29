@@ -4,17 +4,25 @@ public class Club {
 
     //attributs
 
+
+    private int id;
     private String nom;
     private String type;
 
     //constructeur
 
-    public Club(String nom, String type) {
+    public Club(int id, String nom, String type) {
+        this.id = id;
         this.nom = nom;
         this.type = type;
     }
 
+
     //getters
+
+    public int getId() {
+        return id;
+    }
 
     public String getNom() {
         return nom;
@@ -24,8 +32,13 @@ public class Club {
         return type;
     }
 
+
     //setters
 
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public void setNom(String nom) {
         this.nom = nom;
@@ -38,12 +51,10 @@ public class Club {
     @Override
     public String toString() {
         return "Club{" +
-                "nom='" + nom + '\'' +
+                "id=" + id +
+                ", nom='" + nom + '\'' +
                 ", type='" + type + '\'' +
                 '}';
     }
-
-
-
 }
 
