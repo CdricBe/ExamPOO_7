@@ -24,7 +24,7 @@
                 </div>
                 <div class="form-group">
                     <input class="form-control" type="date" name="DateNaiss"
-                           placeholder="DATE DE NAISSANCE JJ/MM/AAAA">
+                           placeholder="DATE DE NAISSANCE">
                 </div>
 
                 <div class="form-group">
