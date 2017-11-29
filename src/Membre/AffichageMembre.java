@@ -31,14 +31,14 @@ public class AffichageMembre {
 
             while (resultat.next()) {
 
-                String prenom = resultat.getString("M_Nom");
-                String nom = resultat.getString("M_Prenom");
-                String dateNaiss = resultat.getString("M_DateNaiss");
+                String nomMembre = resultat.getString("M_Nom");
+                String prenomMembre = resultat.getString("M_Prenom");
+                String dateMembre = resultat.getString("M_DateNaiss");
                 String clubMembre = resultat.getString("FK_Club");
 
 
 
-                Membre Michel = new Membre(nom,prenom,dateNaiss,clubMembre);
+                Membre Michel = new Membre(nomMembre,prenomMembre,dateMembre,clubMembre);
 
                 membres.add(Michel);
 
