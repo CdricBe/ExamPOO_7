@@ -12,12 +12,9 @@ public class ServletAfficheMembre extends HttpServlet {
 
     private AffichageMembre afficheMBR = new AffichageMembre();
 
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
 
         request.setAttribute("membres", afficheMBR.recupereMembre());
         request.getRequestDispatcher("Interface/AffichageMembre.jsp").forward(request,response);
-
     }
 }

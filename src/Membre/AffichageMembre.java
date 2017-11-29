@@ -22,12 +22,8 @@ public class AffichageMembre {
             String passwd = "";
 
             Connection conn = DriverManager.getConnection(url, login, passwd);
-
             Statement state = conn.createStatement();
-
             ResultSet resultat = state.executeQuery("SELECT * FROM membres");
-
-
 
             while (resultat.next()) {
 
@@ -36,21 +32,13 @@ public class AffichageMembre {
                 String dateMembre = resultat.getString("M_DateNaiss");
                 String clubMembre = resultat.getString("FK_Club");
 
-
-
                 Membre Michel = new Membre(nomMembre,prenomMembre,dateMembre,clubMembre);
-
                 membres.add(Michel);
-
-
             }
 
         } catch (Exception e) {
             e.printStackTrace();
-
         }
-
-
         return membres;
     }
 
