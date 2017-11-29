@@ -26,14 +26,25 @@
                     <input class="form-control" type="date" name="DateNaiss"
                            placeholder="DATE DE NAISSANCE JJ/MM/AAAA">
                 </div>
+
                 <div class="form-group">
-                    <input class="form-control" type="text" name="club"
-                           placeholder="nom du club">
+
+                <select name="NomClub" id="NClub">
+
+                    <c:forEach items="${clubs}" var="club">
+
+                        <option value='<c:out value="${club.nom}"/>'><c:out value="${club.nom}"/></option>
+
+                    </c:forEach>
+
+                </select>
+
                 </div>
 
 
                 <input class="btn btn-default btn-block bg-primary text-black" type="submit" value="valider">
             </form>
+
         </div>
     </div>
 

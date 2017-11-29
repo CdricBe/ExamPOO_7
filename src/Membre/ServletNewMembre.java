@@ -1,5 +1,7 @@
 package Membre;
 
+import Club.AffichageClub;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,6 +14,8 @@ public class ServletNewMembre extends HttpServlet {
 
     private MembreService creaMembre = new MembreService();
 
+    private AffichageClub affiche = new AffichageClub();
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String nomMembre = request.getParameter("nomMembre");
@@ -19,12 +23,16 @@ public class ServletNewMembre extends HttpServlet {
         String DateNaiss = request.getParameter(  "DateNaiss");
         String club = request.getParameter("club");
 
+
+
         creaMembre.createMembre(nomMembre,prenomMembre, DateNaiss,club);
         response.sendRedirect("/Interface/Accueil.jsp");
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        request.setAttribute("clubs",affiche.recupereClub());
 
         request.getRequestDispatcher("Interface/NewMembre.jsp").forward(request,response);
 
