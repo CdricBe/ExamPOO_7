@@ -28,18 +28,15 @@
                 </div>
 
                 <div class="form-group">
-
-                    <input class="form-control" type="text" name="club" placeholder="Numero du club">
-
-                <select name="NomClub" id="NClub">
+                    <select name="club" id="NClub">
 
                     <c:forEach items="${clubs}" var="club">
 
-                        <option value='<c:out value="${club.id}${club.nom}"/>'><c:out value="${club.id}    ${club.nom}"/></option>
+                        <option value='<c:out value="${club.id}"/>'><c:out value="${club.nom}"/></option>
 
                     </c:forEach>
 
-                </select>
+                    </select>
 
                 </div>
 
