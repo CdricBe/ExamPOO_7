@@ -20,6 +20,7 @@
                     <th>Prenom</th>
                     <th>Nom</th>
                     <th>Date de naissance</th>
+                    <th>Club</th>
                     <th>Supprimer</th>
                 </tr>
                 </thead>

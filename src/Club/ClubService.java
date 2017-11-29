@@ -20,12 +20,12 @@ public class ClubService {
             Statement state = conn.createStatement();
             Statement state2 = conn.createStatement();
 
-            ResultSet resultat = state2.executeQuery("SELECT C_Nom FROM clubs WHERE C_Nom='"+nom+"'");
+            ResultSet resultat = state2.executeQuery("SELECT C_Nom FROM clubs");
 
             while(resultat.next()){
                 String NomRecup = resultat.getString("C_Nom");
 
-                if(NomRecup.equals(nom)){
+                if(!NomRecup.equals(nom)){
                     state.executeUpdate("INSERT INTO clubs(C_Nom,C_Type) VALUES('"+nom+"','"+type+"')");
                     return true;
                 }
