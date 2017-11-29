@@ -30,7 +30,7 @@
                         <td class="col-2">${membre.nom}</td>
                         <td class="col-2">${membre.dateNaiss}</td>
                         <td>
-                            <a class="col-2" href="/supprime?membre=${membre.nom}&nom=${membre.nom}&dateNaiss=${membre.dateNaiss}">
+                            <a class="col-2" href="/supprime?membre=${membre.prenom}&nom=${membre.nom}&dateNaiss=${membre.dateNaiss}">
                                 <i class="fa fa-trash-o"aria-hidden="true"></i>
                             </a>
                         </td>

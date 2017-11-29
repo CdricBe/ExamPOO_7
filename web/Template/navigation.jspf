@@ -21,7 +21,7 @@
                         Gestion des Membres</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkMembre">
                         <a class="dropdown-item" href="/creamembre" class="nav-link">Nouveau membre</a>
-                        <a class="dropdown-item" href="/afficheMembre" class="nav-link">Liste des membres</a>
+                        <a class="dropdown-item" href="/AfficheMembre" class="nav-link">Liste des membres</a>
                     </div>
                 </li>
             </ul>

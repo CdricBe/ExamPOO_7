@@ -9,6 +9,7 @@ import java.io.IOException;
 
 @WebServlet(name = "ServletAfficheMembre",urlPatterns = {"/AfficheMembre"})
 public class ServletAfficheMembre extends HttpServlet {
+
     private AffichageMembre afficheMBR = new AffichageMembre();
 
 
