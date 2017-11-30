@@ -17,8 +17,8 @@
             <table class="table table-striped">
                 <thead>
                 <tr>
-                    <th>Prenom</th>
                     <th>Nom</th>
+                    <th>Prenom</th>
                     <th>Date de naissance</th>
                     <th>Club</th>
                     <th>Supprimer</th>
@@ -32,7 +32,7 @@
                         <td class="col-3">${membre.dateMembre}</td>
                         <td class="col-3">${membre.clubMembre}</td>
                         <td>
-                            <a class="col-3" href="/supprime?membre=${membre.nomMembre}&nom=${membre.prenomMembre}&dateNaiss=${membre.dateMembre}">
+                            <a class="col-3" href="/deleteMembre?delNomMembre=${membre.nomMembre}&delPrenomMembre=${membre.prenomMembre}">
                                 <i class="fa fa-trash-o"aria-hidden="true"></i>
                             </a>
                         </td>
@@ -40,7 +40,7 @@
                 </c:forEach>
                 </tbody>
             </table>
-            <a class="btn btn-success btn-block" href="/modifier">
+            <a class="btn btn-success btn-block" href="/modifMembre">
                 <i class="fa fa-pencil "aria-hidden="true">  Modifier Membre</i>
             </a>
         </div>

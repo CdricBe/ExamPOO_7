@@ -6,7 +6,7 @@ import java.sql.Statement;
 
 public class MembreServiceDelete {
 
-        public void deleteMembre(String nomMembre) {
+        public void deleteMembre(String nomMembre, String prenomMembre) {
 
             try {
                 //chargement du driver
@@ -17,7 +17,7 @@ public class MembreServiceDelete {
 
                 Connection conn = DriverManager.getConnection(url, login, passwd);
                 Statement state = conn.createStatement();
-                state.executeUpdate("DELETE FROM membres WHERE M_nom = '" + "nomMembre" + "'");
+                state.executeUpdate("DELETE FROM membres WHERE M_Nom='"+nomMembre+"' AND M_Prenom='"+prenomMembre+"'");
 
             } catch (Exception e) {
                 e.printStackTrace();

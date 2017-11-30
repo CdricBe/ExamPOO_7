@@ -26,7 +26,7 @@ public class ServletNewMembre extends HttpServlet {
 
 
         creaMembre.createMembre(nomMembre,prenomMembre, DateNaiss,club);
-        response.sendRedirect("/Interface/Accueil.jsp");
+        response.sendRedirect("AfficheMembre");
 
     }
 

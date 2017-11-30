@@ -16,14 +16,15 @@ public class ServletDeleteMembre extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String nomMembre = request.getParameter("delMembre");
 
-        suppriMembre.deleteMembre(nomMembre);
-        request.getRequestDispatcher("/Interface/Accueil.jsp").forward(request,response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        request.getRequestDispatcher("Interface/deleteMembre.jsp").forward(request,response);
+        String nomMembre = request.getParameter("delNomMembre");
+        String prenomMembre = request.getParameter("delPrenomMembre");
+
+        suppriMembre.deleteMembre(nomMembre,prenomMembre);
+        response.sendRedirect("/AfficheMembre");
     }
 }
