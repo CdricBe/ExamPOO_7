@@ -9,13 +9,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "ServletAfficheMembre",urlPatterns = {"/AfficheMembre"})
-public class ServletAfficheMembre extends HttpServlet {
-
-    private AffichageMembre afficheTous = new AffichageMembre();
+@WebServlet(name = "ServletAfficheMembreParClub",urlPatterns = {"/AfficheMembreClub"})
+public class ServletAfficheMembreParClub extends HttpServlet {
 
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 
     }
 
@@ -23,7 +22,6 @@ public class ServletAfficheMembre extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 
-       request.setAttribute("membres", afficheTous.recupereMembre());
-        request.getRequestDispatcher("Interface/AffichageMembre.jsp").forward(request,response);
+        request.getRequestDispatcher("Interface/AfficheMembreParClub.jsp").forward(request,response);
     }
 }

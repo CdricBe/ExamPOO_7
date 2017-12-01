@@ -7,9 +7,9 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AffichageMembre {
+public class AffichageMembreParClub {
 
-    public List<Membre> recupereMembre() {
+    public List<Membre> recupereMembre(String Nom) {
 
         List<Membre> membres = new ArrayList<Membre>();
 
@@ -23,7 +23,7 @@ public class AffichageMembre {
 
             Connection conn = DriverManager.getConnection(url, login, passwd);
             Statement state = conn.createStatement();
-            ResultSet resultat = state.executeQuery("SELECT M_Nom,M_Prenom,M_DateNaiss,C_Nom FROM membres INNER JOIN clubs on FK_Club=PK_Club ORDER  by C_Nom");
+            ResultSet resultat = state.executeQuery("SELECT M_Nom,M_Prenom,M_DateNaiss,C_Nom FROM membres INNER JOIN clubs on FK_Club=PK_Club WHERE C_Nom='"+Nom+"'");
 
             while (resultat.next()) {
 

@@ -1,12 +1,5 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Cedric
-  Date: 29/11/17
-  Time: 19:07
-  To change this template use File | Settings | File Templates.
---%>
-
 <%@include file="../Template/header.jspf"%>
+
 <%@include file="../Template/navigation.jspf"%>
 
 
@@ -14,24 +7,6 @@
 <div class="container">
     <main class="row justify-content-center">
         <div class="col-6">
-
-            <br>
-            <br>
-
-            <form action="/AfficheMembreClub" method="post">
-                <div class="form-group">
-                    <div class="form-group">
-                        <input class="form-control" type="text" name="nomClub"
-                               placeholder="nom du club pour afficher les membres">
-                    </div>
-                </div>
-                <input class="btn btn-default btn-block bg-primary text-black" type="submit" value="valider">
-            </form>
-
-
-
-            <br>
-            <br>
 
             <table class="table table-striped">
                 <thead>
@@ -63,12 +38,9 @@
                 <i class="fa fa-pencil "aria-hidden="true">  Modifier Membre</i>
             </a>
 
-
-
         </div>
     </main>
 </div>
-
 
 
 
