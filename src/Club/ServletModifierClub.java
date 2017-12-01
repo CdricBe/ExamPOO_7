@@ -12,9 +12,11 @@ public class ServletModifierClub extends HttpServlet {
 
     private ModifierClub modifie= new ModifierClub();
 
+    private AffichageClub affiche = new AffichageClub();
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String nom=request.getParameter("ClubModifier");
+        String nom=request.getParameter("cluby");
         String Newnom=request.getParameter("NewClub");
         String Newtype=request.getParameter("NewType");
 
@@ -25,6 +27,8 @@ public class ServletModifierClub extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        request.setAttribute("clubs", affiche.recupereClub());
 
         request.getRequestDispatcher("Interface/ModifierClub.jsp").forward(request,response);
 

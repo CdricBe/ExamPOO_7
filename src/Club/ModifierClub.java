@@ -20,7 +20,7 @@ public class ModifierClub {
 
             Statement state = conn.createStatement();
 
-            state.executeUpdate("UPDATE clubs SET C_Nom='"+NewNom+"', C_Type='"+NewType+"' WHERE C_Nom = '"+nom+"'");
+            state.executeUpdate("UPDATE clubs SET C_Nom='"+NewNom+"', C_Type='"+NewType+"' WHERE PK_Club = '"+nom+"'");
 
 
         } catch (Exception e) {

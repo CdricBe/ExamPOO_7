@@ -8,8 +8,11 @@
             <h3 class="p-3 bg-primary text-black text-center">Modification d'un club</h3>
             <form action="/modifier" method="post">
                 <div class="form-group">
-                    <input class="form-control" type="text" name="ClubModifier"
-                           placeholder="nom du club à modifier">
+                    <select name="cluby" id="NClub">
+                        <c:forEach items="${clubs}" var="club">
+                            <option value='<c:out value="${club.id}"/>'><c:out value="${club.nom}"/></option>
+                        </c:forEach>
+                    </select>
                 </div>
                 <div class="form-group">
                     <input class="form-control" type="text" name="NewClub"
