@@ -6,7 +6,7 @@ import java.sql.Statement;
 
 public class MofidierMembre {
 
-    public void modifierMembre(String nom, String Prenom, String NewNom, String NewPrenom, String NewClub) {
+    public void modifierMembre(String nom, String NewNom, String NewPrenom, String NewClub) {
 
         try {
             //chargement du driver
@@ -20,7 +20,7 @@ public class MofidierMembre {
 
             Statement state = conn.createStatement();
 
-            state.executeUpdate("UPDATE membres SET M_Nom='"+NewNom+"', M_Prenom='"+NewPrenom+"', FK_Club='"+NewClub+"' WHERE M_Nom = '"+nom+"' AND M_Prenom='"+Prenom+"'");
+            state.executeUpdate("UPDATE membres SET M_Nom='"+NewNom+"', M_Prenom='"+NewPrenom+"', FK_Club='"+NewClub+"' WHERE M_Nom = '"+nom+"'");
 
 
         } catch (Exception e) {

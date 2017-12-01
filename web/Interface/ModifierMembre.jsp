@@ -8,12 +8,11 @@
             <h3 class="p-3 bg-primary text-black text-center">Modification d'un membre</h3>
             <form action="/modifMembre" method="post">
                 <div class="form-group">
-                    <input class="form-control" type="text" name="NMembre"
-                           placeholder="nom du membre à modifier">
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="text" name="PMembre"
-                           placeholder="prenom du membre a modifier">
+                    <select name="membreamodif" id="ModifMembre">
+                        <c:forEach items="${membres}" var="membre">
+                            <option value='<c:out value="${membre.nomMembre}"/>'><c:out value="${membre.nomMembre}   ${membre.prenomMembre}"/></option>
+                        </c:forEach>
+                    </select>
                 </div>
                 <div class="form-group">
                     <input class="form-control" type="text" name="NewNMembre"
