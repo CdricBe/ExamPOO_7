@@ -9,21 +9,21 @@ import java.util.List;
 
 public class AffichageMembreParClub {
 
-    public List<Membre> recupereMembre(String Nom) {
+    public List<Membre> recupereMembreClub(String nomClubRecherche) {
 
         List<Membre> membres = new ArrayList<Membre>();
 
         try {
             //chargement du driver
             Class.forName("com.mysql.jdbc.Driver");
-
             String url = "jdbc:mysql://localhost/exam_poo?useSSL=false";
             String login = "root";
             String passwd = "";
 
             Connection conn = DriverManager.getConnection(url, login, passwd);
             Statement state = conn.createStatement();
-            ResultSet resultat = state.executeQuery("SELECT M_Nom,M_Prenom,M_DateNaiss,C_Nom FROM membres INNER JOIN clubs on FK_Club=PK_Club WHERE C_Nom='"+Nom+"'");
+            String rechercheParClub = "SELECT M_Nom,M_Prenom,M_DateNaiss,C_Nom FROM membres INNER JOIN clubs on FK_Club=PK_Club WHERE C_Nom="+nomClubRecherche;
+            ResultSet resultat = state.executeQuery(rechercheParClub);
 
             while (resultat.next()) {
 

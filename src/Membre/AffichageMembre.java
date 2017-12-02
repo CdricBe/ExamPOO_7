@@ -16,14 +16,13 @@ public class AffichageMembre {
         try {
             //chargement du driver
             Class.forName("com.mysql.jdbc.Driver");
-
             String url = "jdbc:mysql://localhost/exam_poo?useSSL=false";
             String login = "root";
             String passwd = "";
 
             Connection conn = DriverManager.getConnection(url, login, passwd);
             Statement state = conn.createStatement();
-            ResultSet resultat = state.executeQuery("SELECT M_Nom,M_Prenom,M_DateNaiss,C_Nom FROM membres INNER JOIN clubs on FK_Club=PK_Club ORDER  by C_Nom");
+            ResultSet resultat = state.executeQuery("SELECT M_Nom,M_Prenom,M_DateNaiss,C_Nom FROM membres INNER JOIN clubs on FK_Club=PK_Club ORDER  by C_Nom ");
 
             while (resultat.next()) {
 

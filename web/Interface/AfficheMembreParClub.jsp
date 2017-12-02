@@ -8,6 +8,22 @@
     <main class="row justify-content-center">
         <div class="col-6">
 
+            <br>
+            <br>
+
+            <form action="/AfficheMembreClub" method="post">
+                <div class="form-group">
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="nomClub"
+                               placeholder="nom du club pour afficher les membres">
+                    </div>
+                </div>
+                <input class="btn btn-default btn-block bg-primary text-black" type="submit" value="valider">
+            </form>
+
+            <br>
+            <br>
+
             <table class="table table-striped">
                 <thead>
                 <tr>
