@@ -24,11 +24,18 @@
                 </tr>
                 </thead>
                 <tbody>
+
+                <%--
+                affichage sous liste déroulante
+                 --%>
                 <c:forEach items="${clubs}" var="club">
                     <tr>
                         <td class="col-2">${club.nom}</td>
                         <td class="col-2">${club.type}</td>
                         <td>
+                                <%--
+                                supprime club
+                                --%>
                             <a class="col-2" href="/supprime?club=${club.nom}&type=${club.type}">
                                 <i class="fa fa-trash-o"aria-hidden="true"></i>
                             </a>
@@ -37,6 +44,9 @@
                 </c:forEach>
                 </tbody>
             </table>
+            <%--
+            modifie club
+             --%>
             <a class="btn btn-success btn-block" href="/modifier">
                 <i class="fa fa-pencil "aria-hidden="true">  Modifier club</i>
             </a>

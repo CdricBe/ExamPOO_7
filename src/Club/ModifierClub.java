@@ -20,6 +20,8 @@ public class ModifierClub {
 
             Statement state = conn.createStatement();
 
+            //query sql qui update les infos nom et type de la table clubs
+
             state.executeUpdate("UPDATE clubs SET C_Nom='"+NewNom+"', C_Type='"+NewType+"' WHERE PK_Club = '"+nom+"'");
 
 

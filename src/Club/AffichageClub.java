@@ -10,13 +10,18 @@ import java.util.List;
 
 public class AffichageClub {
 
+    // fonction recupere club
+
     public List<Club> recupereClub() {
+
+        //création d'une liste
 
         List<Club> clubs = new ArrayList<Club>();
 
         try {
             //chargement du driver
             Class.forName("com.mysql.jdbc.Driver");
+            System.out.println("connecte au driver");
 
             String url = "jdbc:mysql://localhost/exam_poo?useSSL=false";
             String login = "root";
@@ -26,13 +31,13 @@ public class AffichageClub {
 
             Statement state = conn.createStatement();
 
+            //query sql qui recupere les infos de la table clubs
+
             ResultSet resultat = state.executeQuery("SELECT * FROM clubs");
-
-
 
             while (resultat.next()) {
 
-
+                //stockage des données sql dans des variables
 
                 int id = resultat.getInt("PK_Club");
                 String nom = resultat.getString("C_Nom");
@@ -40,9 +45,15 @@ public class AffichageClub {
 
 
 
+                //création d'un nouveau club
+
                 Club cluby = new Club(id,nom,type);
 
+                //add club dans la liste
+
                 clubs.add(cluby);
+
+                System.out.println(cluby);
 
 
             }

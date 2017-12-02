@@ -3,6 +3,7 @@ package Membre;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class MembreService {
@@ -21,7 +22,7 @@ public class MembreService {
 
             Statement state = conn.createStatement();
 
-            state.executeUpdate("INSERT INTO membres(M_Nom, M_Prenom, M_DateNaiss,FK_Club) VALUES('" + nom + "','" + prenom + "','" + dateNaissance +"','"+club+"')");
+           state.executeUpdate("INSERT INTO membres(M_Nom, M_Prenom, M_DateNaiss,FK_Club) VALUES('" + nom + "','" + prenom + "','" + dateNaissance + "','" + club + "')");
 
 
         } catch (Exception e) {
@@ -29,4 +30,6 @@ public class MembreService {
 
         }
     }
+
+
 }

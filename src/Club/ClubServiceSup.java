@@ -20,6 +20,8 @@ public class ClubServiceSup {
 
             Statement state = conn.createStatement();
 
+            //query sql qui supprime les infos nom et type de la table clubs
+
             state.executeUpdate("DELETE FROM clubs WHERE C_Nom='"+nom+"' AND C_Type='"+type+"'");
 
 

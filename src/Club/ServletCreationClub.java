@@ -10,6 +10,8 @@ import java.io.IOException;
 @WebServlet(name = "ServletCreationClub",urlPatterns = {"/creaclub"})
 public class ServletCreationClub extends HttpServlet {
 
+    //creation de la classe creation d'un club
+
     private ClubService creaclub =new ClubService();
 
 
@@ -17,8 +19,12 @@ public class ServletCreationClub extends HttpServlet {
 
         request.setCharacterEncoding("UTF-8");
 
+        //recup des variables
+
         String nomClub = request.getParameter("nomClub");
         String typeClub = request.getParameter("typeClub");
+
+        //test pour la création d'un club
 
         boolean Conforme = creaclub.creationClub(nomClub,typeClub);
 
@@ -28,13 +34,12 @@ public class ServletCreationClub extends HttpServlet {
         }
         else{
 
+            //msg d'erreur si nom club deja dans la bd
+
             request.setAttribute("errorMessage","Choisir un autre nom");
             request.getRequestDispatcher("/Interface/CreationClub.jsp").forward(request,response);
 
         }
-
-
-
 
 
 
