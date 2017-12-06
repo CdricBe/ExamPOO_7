@@ -6,12 +6,11 @@
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="ExamPOO_7" />
-          <element id="library" level="project" name="apache-tomcat-9.0" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="javax.servlet:jstl:1.2" />
-          <element id="library" level="project" name="lib" />
-          <element id="library" level="project" name="mysql-connector-java-5.1.45-bin" />
+          <element id="library" level="project" name="mysql-connector-java-5.1.44-bin" />
+          <element id="file-copy" path="/Applications/MAMP/mysql-connector-java-5.1.44/mysql-connector-java-5.1.44-bin.jar" />
         </element>
       </element>
     </root>
