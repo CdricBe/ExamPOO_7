@@ -18,6 +18,10 @@ public class ServletModifierClub extends HttpServlet {
 
     private AffichageClub affiche = new AffichageClub();
 
+    //creation d'un type de club
+
+    private AffichageType afficheType = new AffichageType();
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         //recup des variables
@@ -26,11 +30,23 @@ public class ServletModifierClub extends HttpServlet {
         String Newnom=request.getParameter("NewClub");
         String Newtype=request.getParameter("NewType");
 
+        if(Newnom.isEmpty()){
 
-        //appel de la fonction et revient vers l'affichage des clubs
+            request.setAttribute("errorMessage", "veuillez entrer un nouveau nom de club");
+            request.getRequestDispatcher("/Interface/ModifierClub.jsp").forward(request, response);
 
-        modifie.modifierClub(nom,Newnom,Newtype);
-        response.sendRedirect("/afficheClub");
+
+        }
+        else{
+
+            modifie.modifierClub(nom,Newnom,Newtype);
+            response.sendRedirect("/afficheClub");
+
+
+        }
+
+
+
 
     }
 
@@ -39,6 +55,8 @@ public class ServletModifierClub extends HttpServlet {
         //recupere les clubs pour un affichage liste déroulante ds la jsp
 
         request.setAttribute("clubs", affiche.recupereClub());
+
+        request.setAttribute("types",afficheType.recupereTypeClub());
 
         request.getRequestDispatcher("Interface/ModifierClub.jsp").forward(request,response);
 

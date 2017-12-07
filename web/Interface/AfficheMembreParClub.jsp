@@ -54,10 +54,25 @@
                 <i class="fa fa-pencil "aria-hidden="true">  Modifier Membre</i>
             </a>
 
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <form action="/AfficheMembre" method="post">
+                <div class="form-group">
+                    <select name="nomclub" id="NClub">
+                        <c:forEach items="${clubs}" var="club">
+                            <option value='<c:out value="${club.id}"/>'><c:out value="${club.nom}"/></option>
+                        </c:forEach>
+                    </select>
+                </div>
+                <input class="btn btn-default btn-block bg-primary text-black" type="submit" value="valider">
+            </form>
         </div>
     </main>
 </div>
 
 
 
-<%@include file="../Template/footer.jspf"%>
+

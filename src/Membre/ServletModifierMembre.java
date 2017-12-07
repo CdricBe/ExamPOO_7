@@ -25,12 +25,19 @@ public class ServletModifierMembre extends HttpServlet {
         String NewPrenom=request.getParameter("NewPMembre");
         String NewClub= request.getParameter("NewClub");
 
+        if (NewNom.isEmpty() || NewPrenom.isEmpty()) {
 
-        modifMembre.modifierMembre(nom,NewNom,NewPrenom,NewClub);
-        response.sendRedirect("/AfficheMembre");
+            request.setAttribute("errorMessage", "veuillez entrer un nom/prenom ");
+            request.getRequestDispatcher("/Interface/ModifierMembre.jsp").forward(request, response);
+
+        } else {
+
+            modifMembre.modifierMembre(nom,NewNom,NewPrenom,NewClub);
+            response.sendRedirect("/AfficheMembre");
 
 
 
+        }
 
 
     }

@@ -38,6 +38,7 @@
 
 
                 <input class="btn btn-default btn-block bg-primary text-black" type="submit" value="valider">
+                <p class="bg-danger text-white">${errorMessage}</p>
             </form>
         </div>
     </div>

@@ -7,7 +7,7 @@ import java.sql.Statement;
 
 public class ClubService {
 
-    public boolean creationClub(String nom, String type) {
+    public void creationClub(String nom, String type) {
 
         try {
             //chargement du driver
@@ -18,29 +18,18 @@ public class ClubService {
 
             Connection conn = DriverManager.getConnection(url, login, passwd);
             Statement state = conn.createStatement();
-            Statement state2 = conn.createStatement();
 
-            //query sql qui recupere les infos de la table clubs
+            //sql query pour créer un club
 
-            ResultSet resultat = state2.executeQuery("SELECT C_Nom FROM clubs");
 
-            //conditions pour vérifier si la valeur entrée par l'utilisateur est déjà dans la bd
+            state.executeUpdate("INSERT INTO clubs(C_Nom,C_Type) VALUES('"+nom+"','"+type+"')");
 
-            while(resultat.next()){
-                String NomRecup = resultat.getString("C_Nom");
 
-                if(!NomRecup.equals(nom)){
-                    state.executeUpdate("INSERT INTO clubs(C_Nom,C_Type) VALUES('"+nom+"','"+type+"')");
-                    return true;
-                }
-                else{
-                    return false;
-                }
-            }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return false;
+
 
     }
 

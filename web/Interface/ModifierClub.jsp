@@ -19,10 +19,19 @@
                            placeholder="nouveau nom">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="text" name="NewType"
-                           placeholder="nouveau type">
+                    <select name="NewType" id="NClubmodif">
+
+                        <c:forEach items="${types}" var="type">
+
+                            </p><option value='<c:out value="${type.nom}"/>'><c:out value="${type.nom}"/></option>
+
+                        </c:forEach>
+
+                    </select>
+
                 </div>
                 <input class="btn btn-default btn-block bg-primary text-black" type="submit" value="valider">
+                <p class="bg-danger text-white">${errorMessage}</p>
             </form>
         </div>
     </div>

@@ -20,15 +20,24 @@ public class ServletNewMembre extends HttpServlet {
 
         String nomMembre = request.getParameter("nomMembre");
         String prenomMembre = request.getParameter("prenomMembre");
-        String DateNaiss = request.getParameter(  "DateNaiss");
+        String DateNaiss = request.getParameter("DateNaiss");
         String club = request.getParameter("club");
 
+        if (nomMembre.isEmpty() || prenomMembre.isEmpty()) {
 
+            request.setAttribute("errorMessage", "veuillez entrer un nom/prenom ");
+            request.getRequestDispatcher("/Interface/NewMembre.jsp").forward(request, response);
 
-        creaMembre.createMembre(nomMembre,prenomMembre, DateNaiss,club);
-        response.sendRedirect("AfficheMembre");
+        } else {
+
+            creaMembre.createMembre(nomMembre, prenomMembre, DateNaiss, club);
+            response.sendRedirect("AfficheMembre");
+
+        }
 
     }
+
+
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

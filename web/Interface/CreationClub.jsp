@@ -21,8 +21,16 @@
                            placeholder="nom du club">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="text" name="typeClub"
-                           placeholder="type de club">
+                    <select name="typeClub" id="NClub">
+
+                        <c:forEach items="${types}" var="club">
+
+                            <option value='<c:out value="${club.nom}"/>'><c:out value="${club.nom}"/></option>
+
+                        </c:forEach>
+
+                    </select>
+
                 </div>
                 <input class="btn btn-default btn-block bg-primary text-black" type="submit" value="valider">
                 <p class="bg-danger text-white">${errorMessage}</p>

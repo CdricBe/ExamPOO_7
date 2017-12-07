@@ -11,7 +11,7 @@ public class AffichageMembreParClub {
 
     public List<Membre> recupereMembreClub(String nomClubRecherche) {
 
-        List<Membre> membres = new ArrayList<Membre>();
+        List<Membre> membresClub = new ArrayList<Membre>();
 
         try {
             //chargement du driver
@@ -33,13 +33,13 @@ public class AffichageMembreParClub {
                 String clubMembre = resultat.getString("C_Nom");
 
                 Membre Michel = new Membre(nomMembre,prenomMembre,dateMembre,clubMembre);
-                membres.add(Michel);
+                membresClub.add(Michel);
             }
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return membres;
+        return membresClub;
     }
 
 

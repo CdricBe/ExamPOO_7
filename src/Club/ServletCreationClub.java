@@ -14,6 +14,10 @@ public class ServletCreationClub extends HttpServlet {
 
     private ClubService creaclub =new ClubService();
 
+    //creation de la classe affichage d'un club
+
+    private AffichageType affiche = new AffichageType();
+
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -24,28 +28,28 @@ public class ServletCreationClub extends HttpServlet {
         String nomClub = request.getParameter("nomClub");
         String typeClub = request.getParameter("typeClub");
 
-        //test pour la création d'un club
+        // création d'un club
 
-        boolean Conforme = creaclub.creationClub(nomClub,typeClub);
+        if(nomClub.isEmpty()){
 
-        if(Conforme){
+            request.setAttribute("errorMessage", "veuillez entrer un nom de club");
+            request.getRequestDispatcher("/Interface/CreationClub.jsp").forward(request, response);
 
-            response.sendRedirect("/afficheClub");
         }
         else{
 
-            //msg d'erreur si nom club deja dans la bd
+            creaclub.creationClub(nomClub,typeClub);
 
-            request.setAttribute("errorMessage","Choisir un autre nom");
-            request.getRequestDispatcher("/Interface/CreationClub.jsp").forward(request,response);
+            response.sendRedirect("/afficheClub");
+
 
         }
-
-
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        request.setAttribute("types",affiche.recupereTypeClub());
 
         request.getRequestDispatcher("Interface/CreationClub.jsp").forward(request,response);
 

@@ -53,7 +53,7 @@ public class AffichageClub {
 
                 clubs.add(cluby);
 
-                System.out.println(cluby);
+
 
 
             }
