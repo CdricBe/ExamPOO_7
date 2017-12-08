@@ -23,8 +23,13 @@
                            placeholder="nouveau prenom">
                 </div>
 
-                <div class="form-group">
-                    <select name="NewClub" id="NClub">
+                <table>
+
+                <td><p class="form-control">nouveau club pour le membre</p></td>
+
+                    <td><div class="form-group">
+
+                     <select name="NewClub" id="NClub">
 
                         <c:forEach items="${clubs}" var="club">
 
@@ -34,7 +39,8 @@
 
                     </select>
 
-                </div>
+                </div></td>
+                </table>
 
 
                 <input class="btn btn-default btn-block bg-primary text-black" type="submit" value="valider">

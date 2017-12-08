@@ -41,7 +41,7 @@ public class ServletNewMembre extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        request.setAttribute("clubs",affiche.recupereClub());
+        request.getSession().setAttribute("clubs",affiche.recupereClub());
 
         request.getRequestDispatcher("Interface/NewMembre.jsp").forward(request,response);
 

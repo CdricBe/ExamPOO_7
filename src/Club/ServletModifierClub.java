@@ -54,9 +54,9 @@ public class ServletModifierClub extends HttpServlet {
 
         //recupere les clubs pour un affichage liste déroulante ds la jsp
 
-        request.setAttribute("clubs", affiche.recupereClub());
+        request.getSession().setAttribute("clubs", affiche.recupereClub());
 
-        request.setAttribute("types",afficheType.recupereTypeClub());
+        request.getSession().setAttribute("types",afficheType.recupereTypeClub());
 
         request.getRequestDispatcher("Interface/ModifierClub.jsp").forward(request,response);
 

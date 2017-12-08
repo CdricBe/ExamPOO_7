@@ -18,7 +18,12 @@
                     <input class="form-control" type="text" name="NewClub"
                            placeholder="nouveau nom">
                 </div>
-                <div class="form-group">
+                <table>
+
+                    <td><p class="form-control">nouveau type de club</p></td>
+
+                    <td><div class="form-group">
+
                     <select name="NewType" id="NClubmodif">
 
                         <c:forEach items="${types}" var="type">
@@ -29,7 +34,8 @@
 
                     </select>
 
-                </div>
+                    </div></td>
+                </table>
                 <input class="btn btn-default btn-block bg-primary text-black" type="submit" value="valider">
                 <p class="bg-danger text-white">${errorMessage}</p>
             </form>

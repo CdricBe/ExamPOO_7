@@ -44,9 +44,9 @@ public class ServletModifierMembre extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        request.setAttribute("membres",afficheMembre.recupereMembre());
+        request.getSession().setAttribute("membres",afficheMembre.recupereMembre());
 
-        request.setAttribute("clubs",afficheClub.recupereClub());
+        request.getSession().setAttribute("clubs",afficheClub.recupereClub());
 
         request.getRequestDispatcher("Interface/ModifierMembre.jsp").forward(request,response);
 
