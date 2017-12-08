@@ -12,6 +12,8 @@ import java.io.IOException;
 @WebServlet(name = "ServletModifierMembre",urlPatterns = {"/modifMembre"})
 public class ServletModifierMembre extends HttpServlet {
 
+    //création des différentes classes
+
     private MofidierMembre modifMembre = new MofidierMembre();
 
     private AffichageClub afficheClub = new AffichageClub();
@@ -20,10 +22,14 @@ public class ServletModifierMembre extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        //stockage des variables
+
         String nom = request.getParameter("membreamodif");
         String NewNom= request.getParameter("NewNMembre");
         String NewPrenom=request.getParameter("NewPMembre");
         String NewClub= request.getParameter("NewClub");
+
+        //conditions si le champ est null ou pas
 
         if (NewNom.isEmpty() || NewPrenom.isEmpty()) {
 

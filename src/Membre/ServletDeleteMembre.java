@@ -12,6 +12,8 @@ import java.io.IOException;
 @WebServlet(name = "ServletDeleteMembre",urlPatterns = {"/deleteMembre"})
 public class ServletDeleteMembre extends HttpServlet {
 
+    //creation de la classe supprime un membre
+
     private MembreServiceDelete suppriMembre = new MembreServiceDelete();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -20,6 +22,8 @@ public class ServletDeleteMembre extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        //recup et stockage des variables
 
         String nomMembre = request.getParameter("delNomMembre");
         String prenomMembre = request.getParameter("delPrenomMembre");

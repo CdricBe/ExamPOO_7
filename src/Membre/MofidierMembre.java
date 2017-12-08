@@ -18,6 +18,8 @@ public class MofidierMembre {
             Connection conn = DriverManager.getConnection(url, login, passwd);
             Statement state = conn.createStatement();
 
+            //query sql qui update les membres
+
             state.executeUpdate("UPDATE membres SET M_Nom='"+NewNom+"', M_Prenom='"+NewPrenom+"', FK_Club='"+NewClub+"' WHERE M_Nom = '"+nom+"'");
 
         } catch (Exception e) {

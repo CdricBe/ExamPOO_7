@@ -22,6 +22,8 @@ public class MembreService {
 
             Statement state = conn.createStatement();
 
+            //query sql qui insert un membre ds la bd
+
            state.executeUpdate("INSERT INTO membres(M_Nom, M_Prenom, M_DateNaiss,FK_Club) VALUES('" + nom + "','" + prenom + "','" + dateNaissance + "','" + club + "')");
 
 

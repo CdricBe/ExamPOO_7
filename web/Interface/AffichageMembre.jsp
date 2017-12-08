@@ -17,15 +17,27 @@
             <br>
             <br>
 
-            <form action="/AfficheMembreClub" method="post">
-                <div class="form-group">
-                    <div class="form-group">
-                        <input class="form-control" type="text" name="nomClub"
-                               placeholder="nom du club pour afficher les membres">
-                    </div>
+            <form action="/AfficheMembreClub" method="get">
+                <table>
+                    <td><p class="form-control">Affiche membres par club</p></td>
+               <td><div class="form-group">
+                    <select name="club" id="NClub">
+
+                        <c:forEach items="${clubs}" var="club">
+
+                            <option value='<c:out value="${club.id}"/>'><c:out value="${club.nom}"/></option>
+
+                        </c:forEach>
+
+                    </select>
+
                 </div>
+               </td>
+                </table>
                 <input class="btn btn-default btn-block bg-primary text-black" type="submit" value="valider">
             </form>
+
+            <a href="/AfficheMembreClub">z</a>
 
             <br>
             <br>

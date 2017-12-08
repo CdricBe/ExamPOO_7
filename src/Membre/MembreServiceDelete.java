@@ -17,6 +17,8 @@ public class MembreServiceDelete {
 
                 Connection conn = DriverManager.getConnection(url, login, passwd);
                 Statement state = conn.createStatement();
+
+                //query sql qui supprime les membres
                 state.executeUpdate("DELETE FROM membres WHERE M_Nom='"+nomMembre+"' AND M_Prenom='"+prenomMembre+"'");
 
             } catch (Exception e) {

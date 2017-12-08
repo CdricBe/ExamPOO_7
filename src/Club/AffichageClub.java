@@ -21,7 +21,7 @@ public class AffichageClub {
         try {
             //chargement du driver
             Class.forName("com.mysql.jdbc.Driver");
-            System.out.println("connecte au driver");
+
 
             String url = "jdbc:mysql://localhost/exam_poo?useSSL=false";
             String login = "root";

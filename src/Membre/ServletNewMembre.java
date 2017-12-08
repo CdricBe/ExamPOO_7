@@ -12,16 +12,24 @@ import java.io.IOException;
 @WebServlet(name = "ServletNewMembre",urlPatterns = {"/creamembre"})
 public class ServletNewMembre extends HttpServlet {
 
+    //creation de la classe créer un membre
+
     private MembreService creaMembre = new MembreService();
+
+    //creation de la classe affichage d'un club
 
     private AffichageClub affiche = new AffichageClub();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        //recup et stockage des variables
+
         String nomMembre = request.getParameter("nomMembre");
         String prenomMembre = request.getParameter("prenomMembre");
         String DateNaiss = request.getParameter("DateNaiss");
         String club = request.getParameter("club");
+
+        //conditions pour savoir si le champ est vide
 
         if (nomMembre.isEmpty() || prenomMembre.isEmpty()) {
 

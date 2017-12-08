@@ -22,7 +22,7 @@ public class AffichageMembreParClub {
 
             Connection conn = DriverManager.getConnection(url, login, passwd);
             Statement state = conn.createStatement();
-            String rechercheParClub = "SELECT M_Nom,M_Prenom,M_DateNaiss,C_Nom FROM membres INNER JOIN clubs on FK_Club=PK_Club WHERE C_Nom="+nomClubRecherche;
+            String rechercheParClub = "SELECT M_Nom,M_Prenom,M_DateNaiss,C_Nom FROM membres INNER JOIN clubs on FK_Club=PK_Club WHERE C_Nom='"+nomClubRecherche+"'";
             ResultSet resultat = state.executeQuery(rechercheParClub);
 
             while (resultat.next()) {
